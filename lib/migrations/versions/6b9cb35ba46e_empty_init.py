@@ -17,8 +17,8 @@ depends_on = None
 
 
 def upgrade() -> None:
-    pass
+    op.alter_column('students', 'birthday', new_column_name=sa.Column('birth_day', sa.String))
 
 
 def downgrade() -> None:
-    pass
+    op.alter_column('students', 'birth_day', new_column_name=sa.Column('birthday', sa.String)) 
